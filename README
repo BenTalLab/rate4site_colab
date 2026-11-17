@@ -1,0 +1,9 @@
+Overview
+--------
+The rate of evolution is not constant among amino acid sites: some positions evolve slowly and are commonly referred to as "conserved", while others evolve rapidly and are referred to as "variable". The rate variations correspond to different levels of purifying selection acting on these sites. The purifying selection can be the result of geometrical constraints on the folding of the protein into its 3D structure, constraints at amino acid sites involved in enzymatic activity or in ligand binding or, alternatively, at amino acid sites that take part in protein-protein interactions. Rate4Site calculates the relative evolutionary rate at each site using a probabilistic-based evolutionary model. This allows taking into account the stochastic process underlying sequence evolution within protein families and the phylogenetic tree of the proteins in the family. The conservation score at a site corresponds to the site's evolutionary rate. 
+
+Methodology
+-----------
+The sole obligatory input to Rate4Site is an MSA file. The program then computes a phylogenetic tree that is consistent with the available MSA (the user can also input a pre-calculated tree). It then calculates the relative conservation score for each site in the MSA. This is carried out using either an empirical Bayesian method or a maximum likelihood method (Pupko et al., 2002). The differences between the two methods are explained in details in Mayrose et al (2004).
+
+

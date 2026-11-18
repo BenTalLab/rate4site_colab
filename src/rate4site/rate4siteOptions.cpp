@@ -160,7 +160,7 @@ userInputTrTv(0)
 				out_f.close(); // closing the default
 				outFile=optarg;
 				out_f.open(outFile.c_str());
-				if (out_f == NULL) errorMsg::reportError(" unable to open output file for writing. ");
+				if (out_f.fail()) errorMsg::reportError(" unable to open output file for writing. ");
 				outPtr=&out_f;
 			}; break;
 			case 'p':case 'P': spPositionFile=optarg; break;

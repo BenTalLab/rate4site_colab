@@ -2,7 +2,7 @@
 # where to install the headers on the system
 libphylo_adir = $(includedir)/libphylo
 
-lib_LIBRARIES = libphylo.a
+lib_LIBRARIES = libphylo.a libphylo_doublerep.a
 
 # AM_CPPFLAGS = -O3 -Wno-deprecated
 AM_CXXFLAGS =  -O3 -Wno-deprecated -I$(top_srcdir)/src 
@@ -209,3 +209,7 @@ libphylo_a_SOURCES = \
     molphyFormat.cpp \
     getRandomWeights.cpp \
     nexusFormat.cpp 
+
+# Same sources, compiled with the extended-range number type
+libphylo_doublerep_a_SOURCES = $(libphylo_a_SOURCES)
+libphylo_doublerep_a_CPPFLAGS = -DDOUBLEREP

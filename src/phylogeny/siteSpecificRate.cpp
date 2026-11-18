@@ -23,7 +23,7 @@ MDOUBLE computeML_siteSpecificRate(Vdouble & ratesV,
 
 	for (int pos=0; pos < sc.seqLen(); ++pos) {
 		computeML_siteSpecificRate(pos,sc,sp,et,ratesV[pos],likelihoodsV[pos],maxRate,tol);
-		assert(log(likelihoodsV[pos])>0.0);
+		assert(likelihoodsV[pos]>0.0);
 		Lsum += log(likelihoodsV[pos]);
 		LOG(6,<<" rate of pos: "<<pos<<" = "<<ratesV[pos]<<endl);
 	}
@@ -89,7 +89,7 @@ MDOUBLE computeML_siteSpecificRate(Vdouble & ratesV,
 
 		computeML_siteSpecificRate(pos,sc,*spForThisPosition,*treeForThisPosition,bestR,likelihoodsV[pos],maxRate,tol);
 		ratesV[pos] = bestR;
-		assert(log(likelihoodsV[pos])>0.0);
+		assert(likelihoodsV[pos]>0.0);
 		Lsum += log(likelihoodsV[pos]);
 		LOG(6,<<" rate of pos: "<<pos<<" = "<<ratesV[pos]<<endl);
 	}
